@@ -31,7 +31,12 @@ const add=(array)=>{
   }return result
 
 }
-console.log(add([1,2,3,4,5]));
+console.log(add([1,2,3,4,5])))
+//W tych zadaniach widać np siłę funkcji jak map, reduce, filter
+//to samo można zapisać jako:
+const add = (array) => array.reduce((a, b) => a + b);
+const multiply = (array) => array.reduce((a, b) => a * b);
+//dużo czystsze i w praktyce tak się to stosuje. 
 
 const multiply=(array)=>{
   let result=1
@@ -55,6 +60,14 @@ const distFromAverage=(array)=> {
     }
     return resul
 }
+
+//tu też fajnie wchodzi map
+const distanceFromAverage = (array) => {
+  const averageValue = calculateArrayAverage(array); //tu bym zrobił funkcję dodatkową. Generalnie funkcje powinny 
+  //być jak najmniejsze i odpowiadać za jedną rzecz. Im więcej rozbijasz tym łatwiej utrzymać kod
+  return array.map((element) => Math.abs(element - averageValue));
+}
+
 console.log(distFromAverage([1,2,3,4,5,6,7]))// => [3,2,1,0,1,2,3] (średnia z tablicy wejściowej to 4)
 console.log(distFromAverage([1,1,1,1])); //=> [0,0,0,0] (średnia z tablicy wejściowej to 1)
 console.log(distFromAverage([2,8,3,7])) //=> [3,3,2,2] (średnia z tablicy wejściowej to 5)
