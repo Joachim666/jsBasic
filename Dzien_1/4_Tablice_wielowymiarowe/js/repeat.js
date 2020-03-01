@@ -22,6 +22,16 @@ const checkArray=(array)=>{
 
 }
 
+//Idąc ideą Clean Code, ja bym to zrobił w taki sposób: 
+const isOdd = (number) => number % 2 === 0;
+const allArrayItemsAreOdd = (array) => array.every((element) => isOdd(element));
+
+const checkArray = (twoDimensionArray) => {
+  return twoDimensionArray.map((array) => allArrayItemsAreOdd(array))
+};
+  
+
+
 // ```JavaScript
 var arr = [
 [11, 12],
@@ -71,10 +81,10 @@ const create2DArray=(rows,columns)=> {
   for (let i = 0; i < rows; i++) {
     table[i]=[]                              //posilkowalem sie roziwazaniami z neta (petla w petli troche jest to dla mnie abstrakcja :D).
                                             // co oznacza to table[i]=[] ? Czy to jest inijacja drugiego wymariu ?
-     for (let j = 0; j < columns; j++) {
-      table[i][j] = i + ',' + j
-    }
-  }return table
-}
+     for (let j = 0; j < columns; j++) {    //Generalnie staraj się unikać pętli w pętli. Im więcej zagnieżdżeń tym gorzej
+      table[i][j] = i + ',' + j             //Spada czytelność kodu, sam widzisz, że ciężko jest to skumać.
+    }                                       // table[i]=[] oznacza, że w table tworzysz na pozycji [i] pustą tabelę. Po stworzeniu pustej 
+  }return table                           //tabeli zasilasz ją wartościami
+}                 //generalnie straszny antypattern :D Rozbiłbym to na mniejsze funkcje
 
 console.log(create2DArray(5,5));
