@@ -12,6 +12,7 @@ const Sum_arguments = (a, b, c) => {
 }
 //console.log(Sum_arguments(2,5,'123'));
 
+<<<<<<< HEAD
 const SumArguments = (...args) => [...args].reduce((a, b) => a + b, 0)
 console.log('Sum of arguments equls ' + SumArguments(1, 2, 3, 4))
 
@@ -30,6 +31,16 @@ const sum=function(){
   }return result
 }
 console.log('Sum of arguments equls ' + sum(1, 2, 3, 4,'123'))
+=======
+//Jaco:
+const sumArguments = (a=0, b=0, c=0) => {
+  return a + b + c
+}
+//camelCase używa się w JS. w klasach pierwsza litera jest duża, funkcje, zmienne pierwsza mała. Strasznie się tego czepiają
+//plus oczywiście spacing. Dobrze jest zdefiniować wartości domyślne
+//Takie inne ćwiczenie, możesz rozkminić jak zrobić tą funkcję żeby przyjmowała dowolną ilośc argumentów i liczyła sumę
+
+>>>>>>> a010a0938682f561044a6d0a1048fcf673f5b521
 // ### Zadanie A2
 // Napisz funkcję liczącą pole i obwód okręgu. Funkcja przyjmuje promień tej figury geometrycznej jako argument.
 // Jeśli przekazany argument jest nieodpowiedniego typu, to funkcja ma zwrócić `false`.
