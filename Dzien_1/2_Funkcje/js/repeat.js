@@ -7,17 +7,35 @@
 // input -> 1, 2, 3
 // output -> 6
 // ```
-const Sum_arguments=(a,b,c)=>{
-  return a+b+c
+const Sum_arguments = (a, b, c) => {
+  return a + b + c
 }
-console.log(Sum_arguments(2,5,'123'));
+//console.log(Sum_arguments(2,5,'123'));
 
+const SumArguments = (...args) => [...args].reduce((a, b) => a + b, 0)
+console.log('Sum of arguments equls ' + SumArguments(1, 2, 3, 4))
+
+function SumArguments2(){
+  return Array.prototype.reduce.call(arguments, function(a,b){
+    return a+b;
+  },0);
+}
+console.log('Sum of arguments equls ' + SumArguments2(1, 2, 3, 4,'123'))
+
+const sum=function(){
+  let result = 0;
+  for (let i = 0; i < arguments.length; i++) {
+    result += arguments[i];
+    
+  }return result
+}
+console.log('Sum of arguments equls ' + sum(1, 2, 3, 4,'123'))
 // ### Zadanie A2
 // Napisz funkcję liczącą pole i obwód okręgu. Funkcja przyjmuje promień tej figury geometrycznej jako argument.
 // Jeśli przekazany argument jest nieodpowiedniego typu, to funkcja ma zwrócić `false`.
 
-const Calculate_circle=(radious)=>{
-  return Math.PI * radious **2
+const Calculate_circle = (radious) => {
+  return Math.PI * radious ** 2
 
 
 }
@@ -29,9 +47,9 @@ console.log(Calculate_circle(4));
 // Stwórz funkcję anonimową i przypisz ją do zmiennej.
 //Zadaniem funkcji jest wypisanie dziesięć razy:
 //"Gdy piszę kod zawsze i wszędzie używam funkcji oraz nie tworzę zmiennych globalnych".
-const anonim=()=> {
+const anonim = () => {
   var i = 1
-  while (i<=10) {
+  while (i <= 10) {
     console.log('Gdy piszę kod zawsze i wszędzie używam funkcji oraz nie tworzę zmiennych globalnych"');
     i++
   }
@@ -49,23 +67,23 @@ anonim();
 // "Dobra obsluga" => 20% napiwku,
 // "Srednia obsluga" =>15% napiwku,
 // "Zla obsluga" => 0% napiwku.
-const calculateTip=(amount,rating)=>{
-  var result=0
+const calculateTip = (amount, rating) => {
+  var result = 0
   switch (rating) {
     case 'Bardzo dobra obsluga':
-      result= 0.25 * amount
+      result = 0.25 * amount
       break;
     case 'Dobra obsluga':
-      result=0.20*amount
+      result = 0.20 * amount
       break;
     case 'Srednia obsluga':
-      result=0.15*amount
+      result = 0.15 * amount
       break;
     case 'Zla obsluga':
-      result=0
+      result = 0
       break;
     default:
-      result='Nie rozumiem'
+      result = 'Nie rozumiem'
       break;
 
   }return 'Napiwek :' + result
