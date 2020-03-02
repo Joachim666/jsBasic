@@ -7,40 +7,31 @@
 // input -> 1, 2, 3
 // output -> 6
 // ```
-const Sum_arguments = (a, b, c) => {
+const sum_arguments = (a, b, c) => {
   return a + b + c
 }
 //console.log(Sum_arguments(2,5,'123'));
 
-<<<<<<< HEAD
-const SumArguments = (...args) => [...args].reduce((a, b) => a + b, 0)
-console.log('Sum of arguments equls ' + SumArguments(1, 2, 3, 4))
 
-function SumArguments2(){
-  return Array.prototype.reduce.call(arguments, function(a,b){
-    return a+b;
-  },0);
+const sumArguments = (...args) => [...args].reduce((a, b) => a + b, 0)        // wrzucilem 3 roziwazania z dwolona iloscia argumentow.
+                                                                              // ktore bedzie stosowane i jest najbardziej czytelne    
+console.log('Sum of arguments equls ' + sumArguments(1, 2, 3, 4))
+
+const sumArguments2 = function () {
+  return Array.prototype.reduce.call(arguments, function (a, b) {
+    return a + b;
+  }, 0);
 }
-console.log('Sum of arguments equls ' + SumArguments2(1, 2, 3, 4,'123'))
+console.log('Sum of arguments equls ' + sumArguments2(1, 2, 3, 4, '123'))
 
-const sum=function(){
+const sum = function () {
   let result = 0;
   for (let i = 0; i < arguments.length; i++) {
     result += arguments[i];
-    
-  }return result
-}
-console.log('Sum of arguments equls ' + sum(1, 2, 3, 4,'123'))
-=======
-//Jaco:
-const sumArguments = (a=0, b=0, c=0) => {
-  return a + b + c
-}
-//camelCase używa się w JS. w klasach pierwsza litera jest duża, funkcje, zmienne pierwsza mała. Strasznie się tego czepiają
-//plus oczywiście spacing. Dobrze jest zdefiniować wartości domyślne
-//Takie inne ćwiczenie, możesz rozkminić jak zrobić tą funkcję żeby przyjmowała dowolną ilośc argumentów i liczyła sumę
 
->>>>>>> a010a0938682f561044a6d0a1048fcf673f5b521
+  } return result
+}
+console.log('Sum of arguments equls ' + sum(1, 2, 3, 4, '123'))
 // ### Zadanie A2
 // Napisz funkcję liczącą pole i obwód okręgu. Funkcja przyjmuje promień tej figury geometrycznej jako argument.
 // Jeśli przekazany argument jest nieodpowiedniego typu, to funkcja ma zwrócić `false`.
