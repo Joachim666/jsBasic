@@ -6,6 +6,9 @@
 const getNumber = (number, array) => {
     return array.includes(number)             // dlaczego nie dziala return number in array
 }
+
+//powinno działać number in array , ale includes jest chyba optymalniejsze
+
 console.log(getNumber(2, [33, 54, 2, 1, 4, 100])) //=> true
 console.log(getNumber(5, [33, 4, 2, 1, 4, 100])) //=> false
 // ```
@@ -36,6 +39,20 @@ Tree.prototype.bloom = function () {
     // przykladu ?  Jaks prawdzic czy metoda bloom() zostala stworzona osbno dla kazdej instancji ?
 }
 //const bloom = () => console.log('I am blooming')
+// Tree to Obiekt, który ma property type i dodajesz mu metodę bloom. 
+// możesz zrobić np tak, firstTree.hasOwnProperty('type'); i to zwróci true
+// w praktyce się stosuje klasy np.
+
+class Tree {
+    constructor(type) {   //w konstruktorze definiujesz property które definiujesz na początku
+        this.type = type
+    }
+    
+    bloom() {  //metoda
+        console.log(`I am a ${this.type} and I am blooming`)
+    }
+}
+
 
 
 let firstTree = new Tree('Oak')
@@ -66,6 +83,7 @@ const addTheSameNumbers = (number, array) => {                                  
     }
     return null
 }
+//bardzo spoko rozwiązanie. Można by się pokusić o rozbicie jeszcze na mniejsze funkcje
 
 // ```JavaScript
 console.log(addTheSameNumbers(7, [4, 7, 24, 7, 0, 10])) //=> 14
