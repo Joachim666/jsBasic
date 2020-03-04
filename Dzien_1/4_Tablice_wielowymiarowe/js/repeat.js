@@ -29,8 +29,14 @@ const allArrayItemsAreOdd = (array) => array.every((element) => isOdd(element));
 const checkArray = (twoDimensionArray) => {
   return twoDimensionArray.map((array) => allArrayItemsAreOdd(array))             // o wiele bardziej czytelniejsze
 };
-
-
+/*
+ogólnie taka jest idea Clean Code, rozbijać jak najwięcej rzeczy na mniejsze funkcje. 
+Jedna funkcja powinna idealnie robić jedną rzecz. Tak samo idealnie jak funkcja przyjmuje maksymalnie
+jeden argument. I po nazwie wiemy co powinna zwracać. Czyli np isOdd(number) po nazwie możemy stwierdzić, że zwróci
+boolean. checkArray -> jak oni proponują jest mało czytelne. Bo co ma check? Co ma zwrócić? Unika się takich nazw.
+Tasiemce typu checkIfArrayRowsContainOnlyOddNumbers(array) nie są niczym nadzwyczajnym :) Im więcej nazwa mówi tym lepiej.
+Ja np wczoraj dwie godziny się zastanawiałem jak nazywać zmienne i funkcje klas w jednym z workerów nad którym pracuje.
+*/
 
 
 
