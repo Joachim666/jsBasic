@@ -64,7 +64,10 @@ const distFromAverage2 = (array) => {
 const calculateArrayAverage = (array) => {
   return Math.floor(add(array) / array.length)
   //return arr.reduce((a,b) => a+b ,0)/ arr.lenght             /mozna to jakos madrzej napisac z reduce ?
-
+//można, dobry trop, np tak
+}
+const calculateArrayAverage = (array) => {
+  return array.reduce((a, b) => a + b) / array.length
 }
 
 //tu też fajnie wchodzi map
@@ -168,6 +171,8 @@ console.log(getMissingElement([-4, -3, -2, 0, 1, 2, 3, 4])) //=> -1
 const getBirthDay = (array) => {
   const current_year = 2020;
   array.sort((a, b) => b - a)  //czy tak to sie robi ?
+  //tak , ale zazwyczaj funkcję sortującą się osobno definiuje i nazywa odpowiednio np _sortingLowestToHighest
+  // zależy od konwencji ale my np w klasach jak są funkcje czysto pomocnicze to dajemy dash na początku nazwy
   console.log(array);
   let oldest = array.pop()
   let youngest = array.shift()
