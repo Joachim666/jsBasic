@@ -14,7 +14,19 @@ const sum_arguments = (a, b, c) => {
 
 
 const sumArguments = (...args) => [...args].reduce((a, b) => a + b, 0)        // wrzucilem 3 roziwazania z dwolona iloscia argumentow.
-                                                                              // ktore bedzie stosowane i jest najbardziej czytelne    
+                                                                            // ktore bedzie stosowane i jest najbardziej czytelne    
+
+/*
+To jest dokładnie to co bym napisał. Bardzo fajnie. Wychodzimy z założenia, że osoby
+czytające kod się znają na tym. I to jest stosowane najczęściej w nowoczesnym JS.
+
+Tak na marginesie - bo to jest tak zway OneLiner, tez nie zawsze o to chodzi, żeby funkcje napisać 
+jak najkrócej za wszelką cenę. Czasem dobrze jest ją rozbudować, ładnie opisać zmiennymi. Dodać 
+jakieś defensywne If itp
+Ale akurat w takiej prostej operacji One Liner jest idealny
+*/
+
+
 console.log('Sum of arguments equls ' + sumArguments(1, 2, 3, 4))
 
 const sumArguments2 = function () {
